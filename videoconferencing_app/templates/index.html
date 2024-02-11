@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video Conference</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    body {
+      margin: 0; /* Remove default body margin for a full-width background */
+      background-color: transparent; /* Set background color to transparent */
+      background-image: url('{% static "back.png" %}');
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden; /* Hide overflow content */
+    }
+    
+
+    .intro {
+      text-align: center;
+      color: black;
+      padding: 20% 0; /* Adjust padding for centering based on your image and content */
+    }
+
+    .logo {
+      width: 150px; /* Adjust the width of the logo */
+      margin-bottom: 0px; /* Updated margin to close the distance */
+    }   
+
+    .intro h1, .intro h6 {
+      margin: 0; /* Optional: remove default margin for cleaner appearance */
+    }
+
+    .button {
+      /* Add any specific styles for your buttons here */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="intro">
+    <img src="{% static 'logo.jpeg' %}" alt="Logo" class="logo">
+    
+    <!-- create a signup and signin button-->
+    <a href="{% url 'login' %}" class="button">Sign In</a>
+    <a href="{% url 'register' %}" class="button">Sign Up</a>
+  </div>
+</body>
+
+</html>
